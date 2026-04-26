@@ -1,0 +1,12 @@
+class Solution:
+    def rob(self, nums):
+        prev2 = 0 
+        prev1 = 0 
+        for num in nums:
+            current = max(prev1, prev2 + num)
+            prev2 = prev1
+            prev1 = current
+        return prev1
+sol = Solution()
+print(sol.rob([1,2,3,1]))
+print(sol.rob([2,7,9,3,1]))
